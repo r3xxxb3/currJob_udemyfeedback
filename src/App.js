@@ -10,7 +10,7 @@ import FeedbackForm from './components/FeedbackForm'
 import AboutPage from './pages/AboutPage'
 import AboutIconLink from './components/AboutIconLink'
 import Post from './components/Post'
-// import Card from './components/shared/Card'
+import Card from './components/shared/Card'
 
 function App(){
     const [feedback, setFeedback] = useState(FeedbackData) 
@@ -45,8 +45,8 @@ function App(){
 
                     <Route path='/about' element={<AboutPage />}/>
                     <Route path='/post/:id' element={<Post items={feedback} handleDelete={deleteFeedback}/>}></Route>
+                    <Route path="/notfound" element={<Card>Post Not Found !</Card>}></Route>
                 </Routes>
-                {/* <Card >Hello</Card> */}
             </div>
             <Routes>
                     <Route exact path="/" element={<AboutIconLink />}></Route>

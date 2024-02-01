@@ -1,6 +1,9 @@
 import PropTypes from 'prop-types'
+import { useContext } from 'react'
+import FeedbackContext from '../context/FeedbackContext'
 
-function FeedbackStats({items}) {
+function FeedbackStats() {
+    const {items} = useContext(FeedbackContext)
     let average = items.reduce((ttl, cur) => {
         return ttl + cur.rating
     }, 0) / items.length

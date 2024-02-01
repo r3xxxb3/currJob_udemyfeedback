@@ -1,8 +1,11 @@
 import {motion, AnimatePresence} from 'framer-motion'
+import { useContext } from 'react'
 import PropTypes from 'prop-types'
 import FeedBackItem from "./FeedBackItem"
+import FeedbackContext from '../context/FeedbackContext'
 
-function FeedBackList({items, handleDelete}) {
+function FeedBackList({handleDelete}) {
+    const {items} = useContext(FeedbackContext)
     // console.log(items)
     if (!items || items.length === 0){
         return (

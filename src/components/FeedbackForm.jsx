@@ -1,4 +1,4 @@
-import { useState, useContext } from "react"
+import { useState, useContext, useEffect } from "react"
 import Card from "./shared/Card"
 import Button from "./shared/Button"
 import RatingSelect from "./RatingSelect"
@@ -10,7 +10,17 @@ function FeedbackForm({handleCreate}) {
     const [btnDisabled, setBtnDisabled] = useState(true)
     const [message, setMessage] = useState('')
     
-    const{ createFeedback } = useContext(FeedbackContext)
+    const{ createFeedback, feedbackEdit } = useContext(FeedbackContext)
+
+    useEffect(() => {
+        // u can use http request here to fetch data right when the page load
+        if(feedbackEdit.edit === true){
+            // console.log('edit mode') 
+            setBtnDisabled(false)
+            setFeedbackData(feedbackEdit.item.text)
+        }
+    }, [feedbackEdit]) // the [] is leaved on empty so that it only run once (the http request or whatever inside the useEffect), 
+    // i use feedbackEdit inside the useEffect so that every time that state(feedbackEdit) changes value, whatever inside useEffect will run
 
     const handleFeedbackData = (e) => {
         if(feedbackData === ""){

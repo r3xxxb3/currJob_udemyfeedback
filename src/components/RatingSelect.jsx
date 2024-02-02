@@ -9,6 +9,8 @@ function RatingSelect({select}) {
     if(feedbackEdit.edit === true){
       setSelected(+feedbackEdit.item.rating)
       // select(+feedbackEdit.item.rating)
+    }else if (feedbackEdit.edit === false){
+      setSelected(0)
     }
   }, [feedbackEdit])
   

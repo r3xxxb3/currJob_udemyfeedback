@@ -10,7 +10,7 @@ function FeedbackForm({handleCreate}) {
     const [btnDisabled, setBtnDisabled] = useState(true)
     const [message, setMessage] = useState('')
     
-    const{ createFeedback, feedbackEdit } = useContext(FeedbackContext)
+    const{ createFeedback, updateFeedback, setFeedbackEdit ,feedbackEdit, } = useContext(FeedbackContext)
 
     useEffect(() => {
         // u can use http request here to fetch data right when the page load
@@ -43,10 +43,19 @@ function FeedbackForm({handleCreate}) {
                 text: feedbackData,
                 rating,
             }
-            // console.log(newFeedbackData)
-            createFeedback(newFeedbackData)
-            setFeedbackData('')
-            setBtnDisabled(true)
+
+            if(feedbackEdit.edit === true){
+                updateFeedback(feedbackEdit.item.id, newFeedbackData)
+                setFeedbackData('')
+                setBtnDisabled(true)
+                setFeedbackEdit({item: {},edit: false})
+            }else{
+                // console.log(newFeedbackData)
+                createFeedback(newFeedbackData)
+                setFeedbackData('')
+                setBtnDisabled(true)
+            }
+
         }
     }
 

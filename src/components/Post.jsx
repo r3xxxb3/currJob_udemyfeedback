@@ -6,7 +6,7 @@ import { useContext } from "react"
 import Button from "./shared/Button"
 import FeedbackContext from "../context/FeedbackContext"
 
-function Post({ handleDelete}) {
+function Post() {
     // console.log(items)
     const {items} = useContext(FeedbackContext)
     const curr = useParams()
@@ -28,7 +28,7 @@ function Post({ handleDelete}) {
             <AnimatePresence>
             {items.map((item) => ( item.id === +curr.id &&
                 <motion.div key={item.id} initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}}>
-                    <FeedBackItem key={item.id} item={item} handleDelete={(id) => handleDelete(id)}/>
+                    <FeedBackItem key={item.id} item={item}/>
                 </motion.div>
             ))}
             </AnimatePresence>

@@ -1,12 +1,11 @@
 import {motion, AnimatePresence} from 'framer-motion'
 import { useContext } from 'react'
-import PropTypes from 'prop-types'
 import FeedBackItem from "./FeedBackItem"
 import FeedbackContext from '../context/FeedbackContext'
 
 function FeedBackList() {
     const {items} = useContext(FeedbackContext)
-    
+
     // console.log(items)
     if (!items || items.length === 0){
         return (
@@ -35,16 +34,6 @@ function FeedBackList() {
     //         ))}
     //     </div>
     // )
-}
-
-FeedBackList.propTypes = {
-    items: PropTypes.arrayOf(
-        PropTypes.shape({
-            id: PropTypes.string.isRequired,
-            text: PropTypes.string.isRequired,
-            rating: PropTypes.number.isRequired
-        })
-    ).isRequired
 }
 
 export default FeedBackList

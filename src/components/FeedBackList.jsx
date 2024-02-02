@@ -4,8 +4,9 @@ import PropTypes from 'prop-types'
 import FeedBackItem from "./FeedBackItem"
 import FeedbackContext from '../context/FeedbackContext'
 
-function FeedBackList({handleDelete}) {
+function FeedBackList() {
     const {items} = useContext(FeedbackContext)
+    
     // console.log(items)
     if (!items || items.length === 0){
         return (
@@ -20,7 +21,7 @@ function FeedBackList({handleDelete}) {
             <AnimatePresence>
             {items.map((item) => (
                 <motion.div key={item.id} initial={{opacity: 0}} animate={{opacity: 1}} exit={{opacity: 0}}>
-                    <FeedBackItem key={item.id} item={item} handleDelete={(id) => handleDelete(id)}/>
+                    <FeedBackItem key={item.id} item={item}/>
                 </motion.div>
             ))}
             </AnimatePresence>

@@ -1,0 +1,54 @@
+{
+  "feedback": [
+    {
+      "id": 1,
+      "rating": 10,
+      "text": "This is Feedback item 1 coming from the json-server"
+    },
+    {
+      "id": 2,
+      "rating": 9,
+      "text": "This is Feedback item 2 coming from the json-server"
+    },
+    {
+      "id": 3,
+      "rating": 8,
+      "text": "This is Feedback item 3 coming from the json-server"
+    },
+    {
+      "id": 4,
+      "rating": 7,
+      "text": "This is Feedback item 4 coming from the json-server"
+    },
+    {
+      "id": 5,
+      "rating": 6,
+      "text": "This is Feedback item 5 coming from the json-server"
+    },
+    {
+      "id": 6,
+      "rating": 5,
+      "text": "This is Feedback item 6 coming from the json-server"
+    },
+    {
+      "id": 7,
+      "rating": 4,
+      "text": "This is Feedback item 7 coming from the json-server"
+    },
+    {
+      "id": 8,
+      "rating": 3,
+      "text": "This is Feedback item 8 coming from the json-server"
+    },
+    {
+      "id": 9,
+      "rating": 2,
+      "text": "This is Feedback item 9 coming from the json-server"
+    },
+    {
+      "id": 10,
+      "rating": 1,
+      "text": "This is Feedback item 10 coming from the json-server"
+    }
+  ]
+}
